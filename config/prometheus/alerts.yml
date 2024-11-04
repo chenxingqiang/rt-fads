@@ -1,0 +1,29 @@
+groups:
+  - name: rt-fads-alerts
+    rules:
+      - alert: HighLatency
+        expr: rt_fads_prediction_latency_seconds > 0.5
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: High prediction latency
+          description: Prediction latency is above 500ms for 5 minutes
+
+      - alert: HighErrorRate
+        expr: rate(rt_fads_errors_total[5m]) > 0.01
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: High error rate
+          description: Error rate is above 1% for 5 minutes
+
+      - alert: ModelDrift
+        expr: rt_fads_model_drift_score > 0.3
+        for: 15m
+        labels:
+          severity: warning
+        annotations:
+          summary: Model drift detected
+          description: Model performance has significantly deviated from baseline

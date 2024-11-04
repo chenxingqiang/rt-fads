@@ -1,0 +1,28 @@
+# System Configuration
+system:
+  name: RT-FADS
+  version: 0.1.0
+  
+# Model Configuration
+model:
+  input_dim: 128
+  hidden_dim: 256
+  output_dim: 2
+  dropout: 0.5
+  
+# Privacy Configuration
+privacy:
+  epsilon: 0.1
+  delta: 1e-5
+  
+# Training Configuration
+training:
+  batch_size: 64
+  learning_rate: 0.001
+  epochs: 100
+  
+# Deployment Configuration
+deployment:
+  host: "0.0.0.0"
+  port: 8080
+  workers: 4

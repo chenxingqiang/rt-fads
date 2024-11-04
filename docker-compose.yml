@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  rt-fads:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - SECRETFLOW_PSI_PROTOCOL=ECDH
+      - SECRETFLOW_DEVICE_ID=alice
+    volumes:
+      - ./data:/app/data
+    deploy:
+      resources:
+        limits:
+          cpus: '4'
+          memory: 8G
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  prometheus:
+    image: prom/prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./config/prometheus.yml:/etc/prometheus/prometheus.yml
+    
+  grafana:
+    image: grafana/grafana
+    ports:
+      - "3000:3000"
+    depends_on:
+      - prometheus

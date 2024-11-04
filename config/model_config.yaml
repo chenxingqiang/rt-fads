@@ -1,0 +1,42 @@
+model:
+  name: "MT-HGNN"
+  version: "1.0.0"
+  
+  # Model architecture
+  input_dim: 128
+  hidden_dim: 256
+  output_dim: 2
+  num_heads: 4
+  num_layers: 3
+  
+  # Training parameters
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  dropout: 0.1
+  batch_size: 64
+  
+  # Scene attention
+  scene_attention:
+    num_heads: 4
+    dropout: 0.1
+    
+  # Temporal convolution
+  temporal_conv:
+    kernel_size: 3
+    dilation_base: 2
+    
+  # Graph attention
+  graph_attention:
+    num_heads: 4
+    dropout: 0.1
+    
+  # Training
+  optimizer:
+    type: "adam"
+    learning_rate: 0.001
+    weight_decay: 0.0001
+    
+  scheduler:
+    type: "cosine"
+    T_max: 100
+    eta_min: 0.00001
