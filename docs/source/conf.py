@@ -1,8 +1,8 @@
 # Configuration file for Sphinx documentation
 
 project = 'RT-FADS'
-copyright = '2024, Chen Xingqiang'
-author = 'Chen Xingqiang'
+copyright = '2024, Xu xiaoheng,Chen Xingqiang'
+author = 'Xu xiaoheng,Chen Xingqiang'
 
 extensions = [
     'sphinx.ext.autodoc',

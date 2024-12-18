@@ -1,0 +1,5 @@
+declare module '@/app/routes'
+declare module '@/components/ui/card'
+declare module '@/contexts/language-context'
+declare module '@/pages/*'
+declare module '@/components/*' 

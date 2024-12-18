@@ -104,8 +104,6 @@ tmp/
 config/local.yaml
 config/prod.yaml
 # Generated metrics and reports
-metrics/
-reports/
 
 # Kubernetes
 kubeconfig
