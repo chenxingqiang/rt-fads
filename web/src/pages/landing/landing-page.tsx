@@ -66,41 +66,6 @@ const LandingPage = () => {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      {/* Navigation */}
-      <nav className="border-b border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <div className="flex items-center space-x-2">
-              <Shield className="h-8 w-8 text-blue-500" />
-              <span className="text-xl font-bold">RT-FADS</span>
-            </div>
-            <div className="hidden md:flex items-center space-x-8">
-              <a href="#features" className="text-gray-300 hover:text-white">
-                {t('landing.nav.features')}
-              </a>
-              <a href="#architecture" className="text-gray-300 hover:text-white">
-                {t('landing.nav.architecture')}
-              </a>
-              <a href="#docs" className="text-gray-300 hover:text-white">
-                {t('landing.nav.docs')}
-              </a>
-              <a href="/dashboard" className="text-gray-300 hover:text-white">
-                {t('landing.nav.dashboard')}
-              </a>
-              <button
-                onClick={() => setLanguage(language === 'en' ? 'zh' : 'en')}
-                className="text-gray-300 hover:text-white px-3 py-1 rounded-md border border-gray-700 hover:border-gray-600"
-              >
-                {language === 'en' ? '中文' : 'EN'}
-              </button>
-            </div>
-            <button className="px-4 py-2 rounded-md bg-blue-600 hover:bg-blue-700">
-              {t('common.startNow')}
-            </button>
-          </div>
-        </div>
-      </nav>
-
       {/* Hero Section */}
       <div className="relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">

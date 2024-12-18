@@ -71,7 +71,7 @@ const MainLayout = ({ children }: MainLayoutProps) => {
     {
       title: "规则配置",
       icon: <Settings className="h-5 w-5" />,
-      path: "/rules",
+      path: "/rule-config",
       badge: null
     },
     {
